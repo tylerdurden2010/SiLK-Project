@@ -1,0 +1,1 @@
+random=$RANDOM;rwfilter --not-scidr=YouIntraIP/8 --start-date=`date --utc +%Y/%m/%d:%H` --flags-initial=SA/SA --type=all --pass=stdout |rwdedupe --stime-delta=1 --ignore-fields=4,6-10,12-15,20-21,26-29 --output=/tmp/$random.rw;rwfilter --type=all /tmp/$random.rw --pass=/dev/null --python-file=OutConnection.py;rm -f /tmp/$random.rw
